@@ -6,6 +6,7 @@ import lombok.ToString;
 
 @ToString
 @Entity
+@Getter
 @Table(name = "tb_usuario")
 public class Usuario {
     
@@ -13,7 +14,6 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Faz com que o banco gere um valor aleatório
     private Integer id;
     @Column (nullable = false)
-    @Getter
     private String nome;
     @Column (unique = true)
     private String email;
