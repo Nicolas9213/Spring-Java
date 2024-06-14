@@ -1,12 +1,15 @@
 package br.senai.sc.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @ToString
 @Entity
 @Getter
+@Setter
 @Table(name = "tb_usuario")
 public class Usuario {
     
@@ -18,6 +21,7 @@ public class Usuario {
     @Column (unique = true)
     private String email;
     @ToString.Exclude
+    @JsonIgnore
     @Column (name = "password")
     private String senha;
     @Column (length = 50)
